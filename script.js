@@ -43,10 +43,19 @@ function interpolateColor(color1, color2, factor) {
 };
 
 
-/* it would seem that I need to have the span tags tightly hugging the text */
-
-function generateSteppedTextGradient(){
-  let textLength = document.getElementById("l-u-text").innerHTML.length/5;
+function generateSteppedTextGradients(){
+  /* get all elements tagged with "step" class which need to have their gradients adjusted */
+  let divsToStep = document.getElementsByClassName("step");
+  /* for each element we then need to run the process that will convert it's gradient */
+  for (let i = 0; i < divsToStep.length; i++){
+    /* find the length of the inner text without the surrounding whitespace */
+    let textLength = divsToStep[i].innerHTML.trim().length;
+    /* then we need to find the matching gradient class name */
+    let foundList = divsToStep[i].classList;
+    /* let found = foundList.find(el => el.search(/grad/)); */
+    console.log(foundList);
+  }
+  /* let textLength = document.getElementById("l-u-text").innerHTML.length;
   let colour2 = "rgb(187,45,100) ";
   let stGrad = "linear-gradient(90deg, ";
   let perc = 0;
@@ -55,27 +64,17 @@ function generateSteppedTextGradient(){
     let newCol = interpolateColor([34,193, 195],[187,45,100], i * (1/textLength));
     let newColStr = "rgba("+newCol[0]+", "+newCol[1]+", "+newCol[2]+", 1) "+ perc +"% "+ (perc+percJump) +"%, ";
     perc += percJump;
-    /* let col1Start = colour1 + perc + "%, ";
-    perc += percJump;
-    let col1End = colour1 + perc + "%, ";
-    let col2Start = colour2 + perc + "%, ";
-    perc += percJump;
-    let col2End = colour2 + perc + "%, "; */
-    /* console.log(perc) */
     stGrad = stGrad.concat(newColStr);
   }
   stGrad = stGrad.concat(colour2 + perc +"% 100%", " )");
 
   console.log(stGrad);
-  
-/*   let stGrad = "linear-gradient(90deg, white, "+ grText.repeat(textLength-1) +"black)" */
-  /* getCSSRule('#l-u-text').style.background = "linear-gradient(90deg, white, black)"; */
   getCSSRule('#l-u-text').style.background = stGrad;
-  getCSSRule('#l-u-text').style.backgroundClip = "text";
+  getCSSRule('#l-u-text').style.backgroundClip = "text"; */
 }
 
 /* on document load */
 document.addEventListener("DOMContentLoaded", function () {
-  generateSteppedTextGradient();
+  generateSteppedTextGradients();
 });
 

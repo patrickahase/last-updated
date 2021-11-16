@@ -15,26 +15,23 @@
   </head>
 
   <body>
-    <!-- Ok so here's my first update - i'll put more of a general overview in my git readme but in regards to today lets start here -->
-    <!-- Beyond the general set-up i'm going to try and define the banner size, then if I have time/cbf i'll start working on my gradient idea -->
-    <!-- The gradient idea is to set up a text character gradient that works in steps so each letter is a single colour along the gradient -->
-    <!-- This one is quite inspired by caves of qud, hopefully i can write it into a function -->
-    <!-- To me seems to be two ways to go about this, either by stepping the gradient or breaking text into characters, but the second will destory view source readability so I guess we'll generate overly complex gradients -->
-    <!-- I finished writing this comment block at 3:04pm -->
+    <!-- Continuing off from yesterday, I've decided to spend my time today refactoring the function to allow for a robust range of uses -->
+    <!-- I decided hex values might be the easiest way to handle this, so the idea is you write a gradient as per normal in the original css rule and then assign a class that means it'll run the function over the div -->
+    <!-- I want to have custom spacing with the gradient too, if it's just an internal tool than that should be fine, i'll note the format both in the function and at the top of my css file -->
+    <!-- This one might again be a little boring, I do wonder at spending my time focusing much more on the text, while i want to have something for the ascii based work I'm also not really using dynamic text or putting it up
+    against other styling. Maybe I'll get more onto the background stuff tomorrow -->
+    <!-- I finished writing this comment block at 3:14pm -->
     <div id="l-u-wrapper">
-      <span id="l-u-text">Last Updated - 15.11.2021</span>      
+      <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 16.11.2021</span>      
       <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
     </div>
-    <!-- took a break at 4:48pm -->
-    <!-- tried to come back at 5:51pm but wasn't feeling it so here's where I'm leaving it today -->
-    <!-- feel good about some of the base set up but didn't quite get there -->
-    <!-- I was able to get the linear gradient function kind of working but it's still a little janky -->
-    <!-- It's working from some predetermined rgb objects, I need to refactor to make it smooth, I guess the real question has been one of interfaces,
-    where do I want to do the work of defining the gradient and how can I make that easiest? do I used it as something like a filter (by looking for all tagged
-    with a class and then applying it to their existing css defined gradients) or do I make it as something determined at the input of the function, more flexible
-    but certainly more annoying to scale -->
-    <!-- thinking it through it comes down to what language do I want to be writing, html or css? probably css for something like this tbh, that's where I'm used
-    to applying styling so that's where I'll keep it -->
+    <!-- finished 3:53pm -->
+    <!-- hmmm tried to get into it today but a bit stuck and frustrated, had to take a detour to regex and then got stuck when the classlist was returned as a DOMTokenList instead of an array which made it hard to search -->
+    <!-- the idea was that the gradients could be assigned via two classes, one which tells the function to convert it on load and another which actually defines the gradient itself -->
+    <!-- i really want to be able to pull the background css value of the class that's defined the gradient but i'm quite unsure how to do this, it would seem like including a keyword into the 
+    gradients class which could be searched for would be good but that's where I got stuck. I wonder if there's some other way to do it, i think i'm currently getting stuck with thinking through how "hacky" it should be -->
+    <!-- on the one hand it's a tool for me, on the other I want it to be robust enough to actually be usefull -->
+    <!-- I wish this was a little more exciting to update but interesting to see where this leads, makes me think about what tools i actually want/need -->
   </body>
 
 </html>
