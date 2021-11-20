@@ -15,23 +15,23 @@
   </head>
 
   <body>
-    <!-- Continuing off from yesterday, I've decided to spend my time today refactoring the function to allow for a robust range of uses -->
-    <!-- I decided hex values might be the easiest way to handle this, so the idea is you write a gradient as per normal in the original css rule and then assign a class that means it'll run the function over the div -->
-    <!-- I want to have custom spacing with the gradient too, if it's just an internal tool than that should be fine, i'll note the format both in the function and at the top of my css file -->
-    <!-- This one might again be a little boring, I do wonder at spending my time focusing much more on the text, while i want to have something for the ascii based work I'm also not really using dynamic text or putting it up
-    against other styling. Maybe I'll get more onto the background stuff tomorrow -->
-    <!-- I finished writing this comment block at 3:14pm -->
+    <!-- Well I guess there goes my schedule - had my birthday and got sick :( -->
+    <!-- Definitely also put off by the fact I jumped straight into building tools - this project is also supposed to be about fun, so I'll probably push the current gradient generator to the side for the moment -->
+    <!-- Let's do something relatively light and build a div that looks like the ff7 ui -->
+    <!-- Start with building the background gradient then maybe work on borders? -->
+    <!-- Be cool to have custom pointer cursor too but let's see how we go -->
+    <!-- This is supposed to be layered but i think i'll just comment out the previous strain so I can come back to it -->
+    <!-- I finished writing this comment block at 12:07pm -->
     <div id="l-u-wrapper">
-      <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 16.11.2021</span>      
+      <span>Last Updated - 20.11.2021</span>      
+      <!-- <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 20.11.2021</span> -->      
       <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
     </div>
-    <!-- finished 3:53pm -->
-    <!-- hmmm tried to get into it today but a bit stuck and frustrated, had to take a detour to regex and then got stuck when the classlist was returned as a DOMTokenList instead of an array which made it hard to search -->
-    <!-- the idea was that the gradients could be assigned via two classes, one which tells the function to convert it on load and another which actually defines the gradient itself -->
-    <!-- i really want to be able to pull the background css value of the class that's defined the gradient but i'm quite unsure how to do this, it would seem like including a keyword into the 
-    gradients class which could be searched for would be good but that's where I got stuck. I wonder if there's some other way to do it, i think i'm currently getting stuck with thinking through how "hacky" it should be -->
-    <!-- on the one hand it's a tool for me, on the other I want it to be robust enough to actually be usefull -->
-    <!-- I wish this was a little more exciting to update but interesting to see where this leads, makes me think about what tools i actually want/need -->
+    <!-- finished 1:18pm -->
+    <!-- Ok didn't get as far as I wanted - thanks to trigonometry basically and other distractions - but I'm happy with it for today -->
+    <!-- I got the function to generate the angle from top right corner to bottom left -->
+    <!-- It now needs to regenerate on resize as well as calculate the colour stops - probably just some more maths, but basically because it's skewed it won't be the same offset on each side -->
+    <!-- Found someone had done one of those code pen UI recreations of ff7 but it's more fun trying to guess from a reference -->
   </body>
 
 </html>

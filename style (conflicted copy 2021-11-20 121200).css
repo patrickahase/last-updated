@@ -53,9 +53,8 @@ code {
   justify-content: center;
   align-items: center;  
   font-size: 3vw;
-  /* background: linear-gradient(to left top, rgba(34,193,195,1), rgba(253,187,45,1), rgba(34,193,195,1)); */
-  background: conic-gradient(from 45deg at 100% 0, rgba(34,193,195,1) 0% 40%, rgba(253,187,45,1) 50% 50%, rgba(34,193,195,1) 60% 100%);
-/*   background: linear-gradient(.25turn, red, 10%, blue); */
+  background: linear-gradient(135deg, rgba(34,193,195,1), rgba(253,187,45,1), rgba(34,193,195,1));
+  background: linear-gradient(to left top, blue, red);;  
 }
 .grad-bl-gr{
   background: linear-gradient(90deg, rgba(34,193,195,1) 0% 50%, rgba(253,187,45,1) 50% 100%);
