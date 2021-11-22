@@ -15,23 +15,23 @@
   </head>
 
   <body>
-    <!-- Well I guess there goes my schedule - had my birthday and got sick :( -->
-    <!-- Definitely also put off by the fact I jumped straight into building tools - this project is also supposed to be about fun, so I'll probably push the current gradient generator to the side for the moment -->
-    <!-- Let's do something relatively light and build a div that looks like the ff7 ui -->
-    <!-- Start with building the background gradient then maybe work on borders? -->
-    <!-- Be cool to have custom pointer cursor too but let's see how we go -->
-    <!-- This is supposed to be layered but i think i'll just comment out the previous strain so I can come back to it -->
-    <!-- I finished writing this comment block at 12:07pm -->
+    <!-- It's been a bit of a time for me the last couple of days but maybe good to do some quick work on this -->
+    <!-- I'll just keep going from where I left off -->
+    <!-- I want to ease the gradient somewhat - i think it's a little too sharp - and then I'll maybe have a got at the border -->
+    <!-- I think the border issue will help me with room2 - I'd like to avoid too many unecessary divs but let's see what will get us there and I do suspect layering of seperate divs will be the thing -->
+    <!-- for the gradient I'd like to try placing the origin point further NE of the corner, but to do that and retain the destination angle means i'll need to calculate the aspect ratio -->
+    <!-- It may not be what i want though, perhaps a blur filter might be a hacky work around instead -->
+    <!-- failing that overlaying gradients is a possibility, esp if I already have multiple divs going on -->
+
+    <!-- I finished writing this comment block at 2:13pm -->
     <div id="l-u-wrapper">
-      <span>Last Updated - 20.11.2021</span>      
+      <div id="l-u-bg"> </div>
+      <span id="l-u-text">Last Updated - 22.11.2021</span>      
       <!-- <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 20.11.2021</span> -->      
       <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
     </div>
-    <!-- finished 1:18pm -->
-    <!-- Ok didn't get as far as I wanted - thanks to trigonometry basically and other distractions - but I'm happy with it for today -->
-    <!-- I got the function to generate the angle from top right corner to bottom left -->
-    <!-- It now needs to regenerate on resize as well as calculate the colour stops - probably just some more maths, but basically because it's skewed it won't be the same offset on each side -->
-    <!-- Found someone had done one of those code pen UI recreations of ff7 but it's more fun trying to guess from a reference -->
+    <!-- Having a bit of a shit one, I like the end result of the blur but I want something a little easier or at least more contained -->
+    <!-- finished 2:31pm -->
   </body>
 
 </html>

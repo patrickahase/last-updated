@@ -74,13 +74,13 @@ function generateSteppedTextGradients(){
 }
 /* well i guess i need to write something that will determine the css conical gradient's angle */
 function generateAngledConicalGradient(){
-  let gDiv = document.getElementById("l-u-wrapper");
+  let gDiv = document.getElementById("l-u-bg");
   let width = gDiv.offsetWidth;
   let height = gDiv.offsetHeight;
   // assuming that width > height
   let angle = Math.atan(width/height) * (180/Math.PI);
   console.log(angle)
-  gDiv.style.background = "conic-gradient(from " + angle + "deg at 100% 0, rgba(34,193,195,1) 0% 49%, rgba(253,187,45,1) 50% 50%, rgba(34,193,195,1) 51% 100%)";
+  gDiv.style.background = "conic-gradient(from " + angle + "deg at 90% 10%, rgba(34,193,195,1) 0% 49%, rgba(253,187,45,1) 50% 50%, rgba(34,193,195,1) 51% 100%)";
 }
 /* on document load */
 document.addEventListener("DOMContentLoaded", function () {
