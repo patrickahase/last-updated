@@ -15,23 +15,33 @@
   </head>
 
   <body>
-    <!-- It's been a bit of a time for me the last couple of days but maybe good to do some quick work on this -->
-    <!-- I'll just keep going from where I left off -->
-    <!-- I want to ease the gradient somewhat - i think it's a little too sharp - and then I'll maybe have a got at the border -->
-    <!-- I think the border issue will help me with room2 - I'd like to avoid too many unecessary divs but let's see what will get us there and I do suspect layering of seperate divs will be the thing -->
-    <!-- for the gradient I'd like to try placing the origin point further NE of the corner, but to do that and retain the destination angle means i'll need to calculate the aspect ratio -->
-    <!-- It may not be what i want though, perhaps a blur filter might be a hacky work around instead -->
-    <!-- failing that overlaying gradients is a possibility, esp if I already have multiple divs going on -->
-
-    <!-- I finished writing this comment block at 2:13pm -->
+    <!-- Feeling slightly better today but i've been refactoring room2 since this morning so lets see how we go -->
+    <!-- I know I didn't quite get there with the gradient but I think I'm going to swivel to the border as I want to -->
+    <!-- I know I need to layer it, I'm hoping I might get the effect I'm after using ::after - not sure if it really makes the source more human readible or just keep the code contained to css -->
+    <!-- I finished writing this comment block at 6:08pm -->
     <div id="l-u-wrapper">
-      <div id="l-u-bg"> </div>
-      <span id="l-u-text">Last Updated - 22.11.2021</span>      
+      <div id="l-u-bg">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+        <polygon points="0,10 10,0 90,0 100,10 100,90 90,100 10,100 0,90" fill="red" />
+        </svg>
+      </div>
+      <span id="l-u-text">Last Updated - 23.11.2021</span>      
       <!-- <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 20.11.2021</span> -->      
       <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
     </div>
-    <!-- Having a bit of a shit one, I like the end result of the blur but I want something a little easier or at least more contained -->
-    <!-- finished 2:31pm -->
+    <!-- Well that didn't get too far, spent a long while trying to get ::before and ::after working but they didn't end up stacking in the way i'd hoped -->
+    <!-- Then decided doing something like this might be easier if I just used svg, not sure though - i've started and run into the usual responsiveness issue with svg -->
+    <!-- it really feels like this should be a little easier, I guess the expectation is to just use an image file -->
+    <!-- maybe i could use an svg as reference in url tag instead of an image, just the gradient -->
+    <!-- but at the end of the day how sucessful am i really going to be at "fully" recreating the style, maybe i'll give up and look at someone elses attempt at it tomorrow -->
+    <!-- don't feel like I've learned nothing but i'm still on the lookout for a good method of doing these kind of generative complex css styling -->
+    <!-- finished 7:02pm -->
   </body>
 
 </html>

@@ -84,9 +84,9 @@ function generateAngledConicalGradient(){
 }
 /* on document load */
 document.addEventListener("DOMContentLoaded", function () {
-  generateAngledConicalGradient();
+  /* generateAngledConicalGradient(); */
 });
 document.addEventListener("resize", function () {
-  generateAngledConicalGradient();
+  /* generateAngledConicalGradient(); */
 });
 

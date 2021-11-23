@@ -53,6 +53,7 @@ code {
   justify-content: center;
   align-items: center;  
   font-size: 3vw;
+  
   /* background: linear-gradient(to left top, rgba(34,193,195,1), rgba(253,187,45,1), rgba(34,193,195,1)); */
 /*   background: linear-gradient(.25turn, red, 10%, blue); */
 }
@@ -63,9 +64,10 @@ code {
   left: 0%;
   top:0%;
   content: "";
-  filter: blur(10px);
+  background: linear-gradient(to left top, rgba(34,193,195,1), rgba(253,187,45,1), rgba(34,193,195,1));
   z-index: 1;
 }
+
 #l-u-text{
   position: absolute;
   width: 100%;
