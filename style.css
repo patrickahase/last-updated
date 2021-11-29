@@ -63,9 +63,9 @@ code {
   height: 10%;
   left: 0%;
   top:0%;
-  content: "";
-  background: linear-gradient(to left top, rgba(34,193,195,1), rgba(253,187,45,1), rgba(34,193,195,1));
   z-index: 1;
+  display: flex;
+
 }
 
 #l-u-text{
@@ -83,3 +83,11 @@ code {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.MovingBGDivs{
+  height: 480%;
+  background: linear-gradient(180deg, rgb(55,55,55) 20%, rgb(128,128,128) 20% 40%, rgb(180,180,180) 40% 60%, rgb(253,253,253) 60% 80%, rgb(55,55,55) 80%);
+  animation: 8s ease-in-out 0s infinite slideUp1;
+}
+
+@keyframes slideUp1 { 0% { transform: translateY(0%); } 50% { transform: translateY(-80%)} 100% { transform: translateY(0%); } }
