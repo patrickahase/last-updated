@@ -73,7 +73,7 @@ function generateSteppedTextGradients(){
   getCSSRule('#l-u-text').style.backgroundClip = "text"; */
 }
 /* well i guess i need to write something that will determine the css conical gradient's angle */
-function generateAngledConicalGradient(){
+/* function generateAngledConicalGradient(){
   let gDiv = document.getElementById("l-u-bg");
   let width = gDiv.offsetWidth;
   let height = gDiv.offsetHeight;
@@ -81,6 +81,22 @@ function generateAngledConicalGradient(){
   let angle = Math.atan(width/height) * (180/Math.PI);
   console.log(angle)
   gDiv.style.background = "conic-gradient(from " + angle + "deg at 90% 10%, rgba(34,193,195,1) 0% 49%, rgba(253,187,45,1) 50% 50%, rgba(34,193,195,1) 51% 100%)";
+} */
+/* expecting a 1:1 aspect ratio */
+function IncreaseBrushSize(){
+  return (<>
+  <svg
+      width="83%"
+      height="100%"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg" >
+        <rect id="increase-brush-circle" width="100%" height="100%" x="0" y="0" fill="red" />
+        <defs>
+          <radialGradient id="increase-brush-gradient">           
+          </radialGradient>
+        </defs>        
+    </svg>
+  </>)
 }
 /* on document load */
 document.addEventListener("DOMContentLoaded", function () {

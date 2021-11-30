@@ -15,13 +15,11 @@
   </head>
 
   <body>
-    <!-- Ok it's been longer between than I'd hoped but I've been pooling all my time into room2 -->
-    <!-- Have definitely worked through a few things there, tldr afters are VERY useful in making more complex shapes as well as svgs - both maintain a fairly good amount of source readability too which is a definite bonus -->
-    <!-- I need to do more of the silly stuff here I think - tool making is important but maybe that shouldn't take precedent rn -->
-    <!-- Sooo I'm going to create a scrolling 3D effect on the bg like the one here: https://youtu.be/OGDtViPngi8?t=67 -->
-    <!-- Going to try my dynamic generated divs from room2s volume wrapper and then offset their animations -->
-    <!-- But maybe a good goal for today would be to just hand code a simple version before scaling -->
-    <!-- I finished writing this comment block at 3:22pm -->
+    <!-- I guess today I'm going to build on yesterdays animations by swapping the css gradients out with some svgs, should be easy enough I think -->
+    <!-- I'd like to maybe make a tiling thing that will let me do the kind of diagonal stripe thing -->
+    <!-- I'd also like to try my hand at some generative ascii funstions that might recreate the same with just text but that's a whole other thing to work through -->
+    <!-- If I get time beyond this I'll make an effort to see how much I can push the animation itself, shifting speeds/directions maybe - like the source video -->
+    <!-- I finished writing this comment block at 3:32pm -->
     <!-- I like having the generative div code here in line so I can keep track -->
     
     <div id="l-u-wrapper">
@@ -29,27 +27,60 @@
       <div id="l-u-bg">
         
       </div>
-      <span id="l-u-text">Last Updated - 29.11.2021</span>      
+      <span id="l-u-text">Last Updated - 30.11.2021</span>      
       <!-- <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 20.11.2021</span> -->      
       <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
     </div>
     <script>
+      const xmlns = "http://www.w3.org/2000/svg";
       const wrapper = document.getElementById("l-u-bg");
       const divs = 20;
       const sec = 4;
       for (let i = 0; i < divs; i++){
-        let newDiv = document.createElement('div');
-        newDiv.classList.add("MovingBGDivs");
-        newDiv.id = i+1;
-        newDiv.style.width = 100/divs + "%";
-        newDiv.style.animationDelay = (sec/divs)*i + "s";
-        wrapper.appendChild(newDiv);
+        // create svg wrapper
+        let newSVGWrapper = document.createElementNS(xmlns,'svg');
+        newSVGWrapper.viewBox = "0 0 100 500"
+        newSVGWrapper.width = "100%";
+        newSVGWrapper.height = "100%";
+        newSVGWrapper.classList.add("MovingBGDivs");
+        newSVGWrapper.id = "svg-wrapper-"+i+1;
+        newSVGWrapper.style.width = 100/divs + "%";
+        newSVGWrapper.style.animationDelay = (sec/divs)*i + "s";
+        wrapper.appendChild(newSVGWrapper);
+        //create svg texture
+        let newSVGTexture = document.createElementNS(xmlns,'rect');
+        newSVGTexture.setAttribute("width", "100%");
+        newSVGTexture.setAttribute("height", "100%");
+        newSVGTexture.setAttribute("fill", "red");
+        newSVGWrapper.appendChild(newSVGTexture);
       }
     </script>
-    <!-- ok I'm leaving it here for today - I definitely haven't finished but i'm pretty happy with this test -->
-    <!-- next step is generating each of the 4 'sides' in more detail but i'm into the kind of janky motion that it's arrived at -->
-    <!-- I do wonder if dynamically setting the animation length in the script i have would be useful alongside the delay setting -->
+    <!-- Well didn't get that far but it's only been 25 mins -->
+    <!-- I need more time to think on how to approach this thing I'm doing though so calling it for today -->
+    <!-- Basically it's super clunky to have to create the svgs in js, would love to do something like reacts functional rendering but not sure how -->
+    <!-- I wonder if there's some sort of copy div function, perhaps that could work -->
+    <!-- I define the seed div in html and then the js for loop instead of creating divs just copys that one and readjusts values? -->
+    <!-- definitely an idea to follow up on -->
+    <!-- The other approach would be like the blog i found - write a custom svg creation function, it could be viable but maybe not the thing I need for this project -->
+    <!-- Saying that it seems like I want to write a library at some point considering all the stuff I'm doing with css and svgs, could save a lot of time -->
+    <!--  -->
     <!-- finished 4:02pm -->
   </body>
 
 </html>
+
+<!-- function IncreaseBrushSize(){
+  return (<>
+  <svg
+      width="83%"
+      height="100%"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg" >
+        <rect id="increase-brush-circle" width="100%" height="100%" x="0" y="0" fill="red" />
+        <defs>
+          <radialGradient id="increase-brush-gradient">           
+          </radialGradient>
+        </defs>        
+    </svg>
+  </>)
+} -->
