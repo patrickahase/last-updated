@@ -83,7 +83,7 @@ function generateSteppedTextGradients(){
   gDiv.style.background = "conic-gradient(from " + angle + "deg at 90% 10%, rgba(34,193,195,1) 0% 49%, rgba(253,187,45,1) 50% 50%, rgba(34,193,195,1) 51% 100%)";
 } */
 /* expecting a 1:1 aspect ratio */
-function IncreaseBrushSize(){
+/* function IncreaseBrushSize(){
   return (<>
   <svg
       width="83%"
@@ -97,12 +97,82 @@ function IncreaseBrushSize(){
         </defs>        
     </svg>
   </>)
+} */
+
+
+
+function updateSVGBOX() {
+  let parentSVG = document.getElementById('svg-init');
+  let width = window.innerWidth;
+  let height = window.innerHeight/10;
+  let viewX, viewY;
+  if(width > height) {
+    viewX = 100;
+    viewY = 100 * (width/height);
+  } else {
+    viewX = 100 * (width/height);
+    viewY = 100;
+  }
+  parentSVG.setAttribute("viewBox", `0 0 ${viewY} ${viewX}`);
 }
+
+function cloneSVGs(){
+  updateSVGBOX();
+  const divs = 80;
+  const sec = 4;
+  let initSVGRect = document.getElementsByClassName('MovingBGDivs')[0];
+  let parentSVG = document.getElementById('svg-init');
+  getCSSRule('.MovingBGDivs').style.width = 100/divs + "%"
+  for (let i = 0; i < divs; i++){
+    let newSVGRect = initSVGRect.cloneNode();
+    newSVGRect.setAttribute("x", (100/divs)*(i+1) + "%");
+    newSVGRect.style.animation = `4s ease-in-out ${(sec/divs)*(i+1) + "s"} infinite slideUp1`;
+    parentSVG.appendChild(newSVGRect);
+    // create svg wrapper
+    /* let newSVGWrapper = document.createElementNS(xmlns,'svg');
+    newSVGWrapper.id = "svg-wrapper-"+i+1;
+    newSVGWrapper.style.width = 100/divs + "%";
+    newSVGWrapper.style.animationDelay = (sec/divs)*i + "s";
+    wrapper.appendChild(newSVGWrapper);
+    //create svg texture
+    let newSVGTexture = document.createElementNS(xmlns,'rect');
+    newSVGTexture.setAttribute("width", "100%");
+    newSVGTexture.setAttribute("height", "100%");
+    newSVGTexture.setAttribute("fill", "red");
+    newSVGWrapper.appendChild(newSVGTexture); */
+  }
+  initSVGRect.style.animation = `4s ease-in-out 0s infinite slideUp1`;
+  console.log(initSVGRect);
+}
+
+/* const xmlns = "http://www.w3.org/2000/svg";
+  const wrapper = document.getElementById("l-u-bg");
+  const divs = 20;
+  const sec = 4;
+  for (let i = 0; i < divs; i++){
+    // create svg wrapper
+    let newSVGWrapper = document.createElementNS(xmlns,'svg');
+    newSVGWrapper.viewBox = "0 0 100 500"
+    newSVGWrapper.width = "100%";
+    newSVGWrapper.height = "100%";
+    newSVGWrapper.classList.add("MovingBGDivs");
+    newSVGWrapper.id = "svg-wrapper-"+i+1;
+    newSVGWrapper.style.width = 100/divs + "%";
+    newSVGWrapper.style.animationDelay = (sec/divs)*i + "s";
+    wrapper.appendChild(newSVGWrapper);
+    //create svg texture
+    let newSVGTexture = document.createElementNS(xmlns,'rect');
+    newSVGTexture.setAttribute("width", "100%");
+    newSVGTexture.setAttribute("height", "100%");
+    newSVGTexture.setAttribute("fill", "red");
+    newSVGWrapper.appendChild(newSVGTexture);
+  } */
 /* on document load */
 document.addEventListener("DOMContentLoaded", function () {
-  /* generateAngledConicalGradient(); */
+  cloneSVGs();
+
 });
 document.addEventListener("resize", function () {
-  /* generateAngledConicalGradient(); */
+  cloneSVGs();
 });
 
