@@ -20,14 +20,26 @@
           xmlns="http://www.w3.org/2000/svg" >
             <defs>
               <linearGradient id="myGradient" gradientTransform="rotate(90)">
-                <stop offset="20%"  stop-color="gold" />
-                <stop offset="20%" stop-color="red" />
-                <stop offset="40%" stop-color="red" />
-                <stop offset="40%" stop-color="green" />
-                <stop offset="60%" stop-color="green" />
-                <stop offset="60%" stop-color="blue" />
-                <stop offset="80%" stop-color="blue" />
-                <stop offset="80%" stop-color="gold" />
+                <stop offset=".3%"  stop-color="black" />
+                <stop offset=".3%"  stop-color="#BE9B96" />
+                <stop offset="19.7%"  stop-color="#7c3f58" />
+                <stop offset="19.7%"  stop-color="black" />
+                <stop offset="20.3%"  stop-color="black" />
+                <stop offset="20.3%" stop-color="#B45564" />
+                <stop offset="39.7%" stop-color="#eb6b6f" />
+                <stop offset="39.7%"  stop-color="black" />
+                <stop offset="40.3%"  stop-color="black" />
+                <stop offset="40.3%" stop-color="#F28A72" />
+                <stop offset="59.7%" stop-color="#f9a875" />
+                <stop offset="59.7%"  stop-color="black" />
+                <stop offset="60.3%"  stop-color="black" />
+                <stop offset="60.3%" stop-color="#FCCFA4" />
+                <stop offset="79.7%" stop-color="#fff6d3" />
+                <stop offset="79.7%"  stop-color="black" />
+                <stop offset="80.3%"  stop-color="black" />
+                <stop offset="80.3%" stop-color="#BE9B96" />
+                <stop offset="99.7%" stop-color="#7c3f58" />
+                <stop offset="99.7%" stop-color="black" />
               </linearGradient>
             </defs>        
         </svg>
@@ -35,11 +47,13 @@
   </head>
 
   <body>
-    <!-- Been a bit of a scramble to get the room2 backend up again but hopefully have enough time to be back here -->
-    <!-- Nothing Fancy here just going to attempt my idea of copying svg divs instead of dynamically generating them -->
-    <!-- I finished writing this comment block at 5:01pm -->
-    <!-- I like having the generative div code here in line so I can keep track -->
-    
+    <!-- Ok gonna try and do something relaxed and focused on styling today, play with some established ideas -->
+    <!-- did have some good thoughts about my own library, mainly realising I can just make one gradually -->
+    <!-- still don't quite know the best way to do it - i'd like for the updating in one project to propogate to others -->
+    <!-- probably overkill to do a npm distribution but maybe some other thing could work for me locally at least -->
+    <!-- anyway not so import but could have random things i use often like getcssrule and colour conversions -->
+    <!-- I finished writing this comment block at 2:40pm -->
+
     <div id="l-u-wrapper">
       
       <div id="l-u-bg">
@@ -54,17 +68,15 @@
         
         
       </div>
-      <span id="l-u-text">Last Updated - 04.12.2021</span>      
+      <span id="l-u-text">Last Updated - 05.12.2021</span>      
       <!-- <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 20.11.2021</span> -->      
       <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
     </div>
-    <!-- ok so not a great texture just yet but cloning the svg rect proved useful -->
-    <!-- would still like to make it properly responsive but i think this has a lot of potential -->
-    <!-- i wonder what kind of offsets i might be able to do by controlling the animation directly, maybe some sin/cos stuff -->
-    <!-- I also wonder about using those after border elements on this too, might be cool thought not sure afters would work on a rect -->
-    <!-- I do like that due to my current schedule with this and room2 i'm developing more consistency in my coding syntax -->
-    <!-- it's a bit silly but working out the aesthetic structure of spacing is fun -->
-    <!-- finished 4:02pm -->
+    <!-- I used the Ice Cream GB Palette from Kerrie Lake on lospec https://lospec.com/palette-list/ice-cream-gb -->
+    <!-- ok I'm going to leave it here, the gradient got a little silly in it's size but i think looks cool -->
+    <!-- also pretty fun messing around with the animation keyframes -->
+    <!-- If i want to take this further I think I would use one of those third party easing interpolation calculators to make the animation smooth in and out of each step -->
+    <!-- finished 3:16pm -->
   </body>
 
 </html>

@@ -118,15 +118,17 @@ function updateSVGBOX() {
 
 function cloneSVGs(){
   updateSVGBOX();
-  const divs = 80;
+  const divs = 160;
   const sec = 4;
+  aniLength = '20s';
   let initSVGRect = document.getElementsByClassName('MovingBGDivs')[0];
   let parentSVG = document.getElementById('svg-init');
-  getCSSRule('.MovingBGDivs').style.width = 100/divs + "%"
+  getCSSRule('.MovingBGDivs').style.width = 100/divs + "%";
   for (let i = 0; i < divs; i++){
     let newSVGRect = initSVGRect.cloneNode();
     newSVGRect.setAttribute("x", (100/divs)*(i+1) + "%");
-    newSVGRect.style.animation = `4s ease-in-out ${(sec/divs)*(i+1) + "s"} infinite slideUp1`;
+    let animationDelay = (sec/divs)*(i+1)*1.5;
+    newSVGRect.style.animation = `${aniLength} ease-in-out ${ animationDelay + "s"} infinite slideUp1`;
     parentSVG.appendChild(newSVGRect);
     // create svg wrapper
     /* let newSVGWrapper = document.createElementNS(xmlns,'svg');
@@ -141,7 +143,7 @@ function cloneSVGs(){
     newSVGTexture.setAttribute("fill", "red");
     newSVGWrapper.appendChild(newSVGTexture); */
   }
-  initSVGRect.style.animation = `4s ease-in-out 0s infinite slideUp1`;
+  initSVGRect.style.animation = `${aniLength} ease-in-out 0s infinite slideUp1`;
   console.log(initSVGRect);
 }
 
