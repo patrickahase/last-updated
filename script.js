@@ -118,18 +118,24 @@ function updateSVGBOX() {
 
 function cloneSVGs(){
   updateSVGBOX();
-  const divs = 160;
+  const divs = 32;
   const sec = 4;
-  aniLength = '20s';
-  let initSVGRect = document.getElementsByClassName('MovingBGDivs')[0];
+  aniLength = '4s';
+  let initSVGRect1 = document.getElementById('moving-rect-1');
+  let initSVGRect2 = document.getElementById('moving-rect-2');
   let parentSVG = document.getElementById('svg-init');
-  getCSSRule('.MovingBGDivs').style.width = 100/divs + "%";
+  getCSSRule('#moving-rect-1').style.width = 100/divs + "%";
+  getCSSRule('#moving-rect-2').style.width = 100/divs + "%";
   for (let i = 0; i < divs; i++){
-    let newSVGRect = initSVGRect.cloneNode();
-    newSVGRect.setAttribute("x", (100/divs)*(i+1) + "%");
-    let animationDelay = (sec/divs)*(i+1)*1.5;
-    newSVGRect.style.animation = `${aniLength} ease-in-out ${ animationDelay + "s"} infinite slideUp1`;
-    parentSVG.appendChild(newSVGRect);
+    let newSVGRect1 = initSVGRect1.cloneNode();
+    let newSVGRect2 = initSVGRect1.cloneNode();
+    newSVGRect1.setAttribute("x", (100/divs)*(i+1) + "%");
+    newSVGRect2.setAttribute("x", (100/divs)*(i+1) + "%");
+    let animationDelay = (sec/divs)*(i+1);
+    newSVGRect1.style.animation = `${aniLength} linear ${ animationDelay + "s"} infinite moveRect1`;
+    newSVGRect2.style.animation = `${aniLength} linear ${ animationDelay + "s"} infinite moveRect2`;
+    parentSVG.appendChild(newSVGRect1);
+    parentSVG.appendChild(newSVGRect2);
     // create svg wrapper
     /* let newSVGWrapper = document.createElementNS(xmlns,'svg');
     newSVGWrapper.id = "svg-wrapper-"+i+1;
@@ -143,8 +149,8 @@ function cloneSVGs(){
     newSVGTexture.setAttribute("fill", "red");
     newSVGWrapper.appendChild(newSVGTexture); */
   }
-  initSVGRect.style.animation = `${aniLength} ease-in-out 0s infinite slideUp1`;
-  console.log(initSVGRect);
+  initSVGRect1.style.animation = `${aniLength} linear 0s infinite moveRect1`;
+  initSVGRect2.style.animation = `${aniLength} linear 0s infinite moveRect2`;
 }
 
 /* const xmlns = "http://www.w3.org/2000/svg";
@@ -172,7 +178,6 @@ function cloneSVGs(){
 /* on document load */
 document.addEventListener("DOMContentLoaded", function () {
   cloneSVGs();
-
 });
 document.addEventListener("resize", function () {
   cloneSVGs();
