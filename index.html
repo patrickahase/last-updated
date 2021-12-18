@@ -41,15 +41,24 @@
                 <stop offset="99.7%" stop-color="#7c3f58" />
                 <stop offset="99.7%" stop-color="black" />
               </linearGradient>
+              <pattern id="myPattern" width="25%"
+                        height="25%"
+                        viewBox="0 0 100 100">
+                <rect width="50%" height="50%" fill="red" />
+                <rect width="50%" x="50%" height="50%" fill="blue" />
+                <rect width="50%" height="50%" y="50%" fill="blue" />
+                <rect width="50%" x="50%" height="50%" y="50%" fill="red" />
+              </pattern>
             </defs>        
         </svg>
 
   </head>
 
   <body>
-    <!-- Continuing on from yesterday - I did a reference c4d animation so hopefully that will help with the overall 3d look -->
-    <!-- going to keep it short - got lots of room2 network stuff that i'm avoiding so shouldn't take too long on this -->
-    <!-- I finished writing this comment block at 12:55pm -->
+    <!-- It's been a while but i'm here doing this one offline while I'm flying to see my family in Brisbane -->
+    <!-- Don't have many expectations going into this but it'll be interesting to see what I can do without any access to references -->
+    <!-- Maybe I'll just try and do some svg patterns -->
+    <!-- I finished writing this comment block at 5:16pm -->
 
     <div id="l-u-wrapper">
       
@@ -61,21 +70,18 @@
           id="svg-init"
           xmlns="http://www.w3.org/2000/svg" >
             <!-- <rect class="MovingBGDivs" x="0" y="0" fill="url('#myGradient')" /> -->      
-            <rect id="moving-rect-1" fill="#B45564" width="100%" />      
-            <rect id="moving-rect-2" fill="#B45564" width="100%" />      
+            <rect id="moving-rect-1" fill="url('#myPattern')" width="100%" />      
+            <rect id="moving-rect-2" fill="url('#myPattern')" width="100%" />      
         </svg>
         
         
       </div>
-      <span id="l-u-text">Last Updated - 06.12.2021</span>      
+      <span id="l-u-text">Last Updated - 18.12.2021</span>      
       <!-- <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 20.11.2021</span> -->      
       <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
     </div>
-    <!-- I used the Ice Cream GB Palette from Kerrie Lake on lospec https://lospec.com/palette-list/ice-cream-gb -->
-    <!-- ok quitting while i'm ahead -->
-    <!-- feel very happy with where it's at though with these rects acting on brightness animations so whatever fill i choose will act the same -->
-    <!-- looks cool as well with a lot more - 160 - segments -->
-    <!-- finished 1:40pm -->
+    <!-- Too awkward to finish this on the flight so just uploading it now -->
+    <!-- finished 7:28pm -->
   </body>
 
 </html>
