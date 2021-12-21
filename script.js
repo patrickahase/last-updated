@@ -103,8 +103,10 @@ function generateSteppedTextGradients(){
 
 function updateSVGBOX() {
   let parentSVG = document.getElementById('svg-init');
+  let rectSVG = document.getElementById('rect');
   let width = window.innerWidth;
   let height = window.innerHeight/10;
+  let lcd = width/height;
   let viewX, viewY;
   if(width > height) {
     viewX = 100;
@@ -152,6 +154,9 @@ function cloneSVGs(){
   initSVGRect1.style.animation = `${aniLength} linear 0s infinite moveRect1`;
   initSVGRect2.style.animation = `${aniLength} linear 0s infinite moveRect2`;
 }
+function calculateGrid() {
+  console
+}
 
 /* const xmlns = "http://www.w3.org/2000/svg";
   const wrapper = document.getElementById("l-u-bg");
@@ -177,9 +182,9 @@ function cloneSVGs(){
   } */
 /* on document load */
 document.addEventListener("DOMContentLoaded", function () {
-  cloneSVGs();
+  updateSVGBOX();
 });
 document.addEventListener("resize", function () {
-  cloneSVGs();
+  updateSVGBOX();
 });
 

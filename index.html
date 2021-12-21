@@ -12,101 +12,52 @@
 
     <title>last-updated</title>
 
-    <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          id="gradient-ref"
-          xmlns="http://www.w3.org/2000/svg" >
-            <defs>
-              <linearGradient id="myGradient" gradientTransform="rotate(90)">
-                <stop offset=".3%"  stop-color="black" />
-                <stop offset=".3%"  stop-color="#BE9B96" />
-                <stop offset="19.7%"  stop-color="#7c3f58" />
-                <stop offset="19.7%"  stop-color="black" />
-                <stop offset="20.3%"  stop-color="black" />
-                <stop offset="20.3%" stop-color="#B45564" />
-                <stop offset="39.7%" stop-color="#eb6b6f" />
-                <stop offset="39.7%"  stop-color="black" />
-                <stop offset="40.3%"  stop-color="black" />
-                <stop offset="40.3%" stop-color="#F28A72" />
-                <stop offset="59.7%" stop-color="#f9a875" />
-                <stop offset="59.7%"  stop-color="black" />
-                <stop offset="60.3%"  stop-color="black" />
-                <stop offset="60.3%" stop-color="#FCCFA4" />
-                <stop offset="79.7%" stop-color="#fff6d3" />
-                <stop offset="79.7%"  stop-color="black" />
-                <stop offset="80.3%"  stop-color="black" />
-                <stop offset="80.3%" stop-color="#BE9B96" />
-                <stop offset="99.7%" stop-color="#7c3f58" />
-                <stop offset="99.7%" stop-color="black" />
-              </linearGradient>
-              <pattern id="myPattern" width="25%"
-                        height="25%"
-                        viewBox="0 0 100 100">
-                <rect width="50%" height="50%" fill="red" />
-                <rect width="50%" x="50%" height="50%" fill="blue" />
-                <rect width="50%" height="50%" y="50%" fill="blue" />
-                <rect width="50%" x="50%" height="50%" y="50%" fill="red" />
-              </pattern>
-            </defs>        
-        </svg>
-
   </head>
 
   <body>
-    <!-- It's been a while but i'm here doing this one offline while I'm flying to see my family in Brisbane -->
-    <!-- Don't have many expectations going into this but it'll be interesting to see what I can do without any access to references -->
-    <!-- Maybe I'll just try and do some svg patterns -->
-    <!-- I finished writing this comment block at 5:16pm -->
+    <!-- Hopefully - but not likely - quick one today, feeling pretty spent after the weekend -->
+    <!-- I want to have a go at something I've often tried as part of other things but never quite worked out - a responsive checkerboard -->
+    <!-- If i get this I can move onto more complex ascii art stuff maybe, using mono-spaced fonts -->
+    <!-- Just going to start slowly though and do a simple checkerboard -->
+    <!-- Starting with trying some ideas from here: https://stackoverflow.com/questions/55455177/how-to-create-a-responsive-checkerboard-background-in-css -->
+    <!-- I finished writing this comment block at 3:07pm -->
 
     <div id="l-u-wrapper">
       
       <div id="l-u-bg">
         <svg
-          width="100%"
-          height="100%"
+          
           viewBox="0 0 100 100"
           id="svg-init"
           xmlns="http://www.w3.org/2000/svg" >
+          <defs>
+            <linearGradient id="Gradient1">
+              <stop offset="5%" stop-color="white"/>
+              <stop offset="95%" stop-color="blue"/>
+            </linearGradient>
+            <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="5%" stop-color="red"/>
+              <stop offset="95%" stop-color="orange"/>
+            </linearGradient>
+        
+            <pattern id="Pattern" x="0" y="0" width=".02" height=".1" patternContentUnits="objectBoundingBox" >
+              <rect x="0" y="0" width="0.5" height="0.05" fill="skyblue"/>
+              <rect x="0" y="0" width="0.5" height="0.05" fill="url(#Gradient2)"/>
+            </pattern>
+          </defs>
             <!-- <rect class="MovingBGDivs" x="0" y="0" fill="url('#myGradient')" /> -->      
-            <rect id="moving-rect-1" fill="url('#myPattern')" width="100%" />      
-            <rect id="moving-rect-2" fill="url('#myPattern')" width="100%" />      
+            <rect id="rect" fill="url(#Pattern)" width="100%"
+            height="100%" />
+                     
         </svg>
         
         
       </div>
-      <span id="l-u-text">Last Updated - 18.12.2021</span>      
-      <!-- <span>Last <span id="l-u-text" class="step grad-bl-gr">Updated</span> - 20.11.2021</span> -->      
-      <!-- <span id="l-u-text">Last Updated - 15.11.2021</span>  -->     
+      <span id="l-u-text">Last Updated - 21.12.2021</span>      
     </div>
-    <!-- Too awkward to finish this on the flight so just uploading it now -->
-    <!-- finished 7:28pm -->
+    <!-- Ok brain just isn't doing it today - this article certainly has the answer but still need to wrap my head around it -->
+    <!-- maybe I should start with a fixed div size then make it responsive -->
+    <!-- finished 3:59pm -->
   </body>
 
 </html>
-
-<!-- <script>
-  const xmlns = "http://www.w3.org/2000/svg";
-  const wrapper = document.getElementById("l-u-bg");
-  const divs = 20;
-  const sec = 4;
-  for (let i = 0; i < divs; i++){
-    // create svg wrapper
-    let newSVGWrapper = document.createElementNS(xmlns,'svg');
-    newSVGWrapper.viewBox = "0 0 100 500"
-    newSVGWrapper.width = "100%";
-    newSVGWrapper.height = "100%";
-    newSVGWrapper.classList.add("MovingBGDivs");
-    newSVGWrapper.id = "svg-wrapper-"+i+1;
-    newSVGWrapper.style.width = 100/divs + "%";
-    newSVGWrapper.style.animationDelay = (sec/divs)*i + "s";
-    wrapper.appendChild(newSVGWrapper);
-    //create svg texture
-    let newSVGTexture = document.createElementNS(xmlns,'rect');
-    newSVGTexture.setAttribute("width", "100%");
-    newSVGTexture.setAttribute("height", "100%");
-    newSVGTexture.setAttribute("fill", "red");
-    newSVGWrapper.appendChild(newSVGTexture);
-  }
-</script> -->
