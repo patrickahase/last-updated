@@ -15,49 +15,36 @@
   </head>
 
   <body>
-    <!-- Hopefully - but not likely - quick one today, feeling pretty spent after the weekend -->
-    <!-- I want to have a go at something I've often tried as part of other things but never quite worked out - a responsive checkerboard -->
-    <!-- If i get this I can move onto more complex ascii art stuff maybe, using mono-spaced fonts -->
-    <!-- Just going to start slowly though and do a simple checkerboard -->
-    <!-- Starting with trying some ideas from here: https://stackoverflow.com/questions/55455177/how-to-create-a-responsive-checkerboard-background-in-css -->
-    <!-- I finished writing this comment block at 3:07pm -->
+    <!-- Ok moving on from yesterday going to start with a fixed res than keep scaling to ~hopefully~ work out responsiveness -->
+    <!-- I finished writing this comment block at 4:26pm -->
 
     <div id="l-u-wrapper">
       
       <div id="l-u-bg">
-        <svg
-          
+        <svg          
+          width="80" height="80"
           viewBox="0 0 100 100"
           id="svg-init"
+          preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg" >
-          <defs>
-            <linearGradient id="Gradient1">
-              <stop offset="5%" stop-color="white"/>
-              <stop offset="95%" stop-color="blue"/>
-            </linearGradient>
-            <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="5%" stop-color="red"/>
-              <stop offset="95%" stop-color="orange"/>
-            </linearGradient>
-        
-            <pattern id="Pattern" x="0" y="0" width=".02" height=".1" patternContentUnits="objectBoundingBox" >
-              <rect x="0" y="0" width="0.5" height="0.05" fill="skyblue"/>
-              <rect x="0" y="0" width="0.5" height="0.05" fill="url(#Gradient2)"/>
+          <defs>        
+            <pattern id="Pattern" x="0" y="0" width=".25" height=".25"
+                      >
+              <rect x="0" y="0" width="25" height="25" fill="green"/>
+              <rect x="2.5" y="2.5" width="20" height="20" fill="blue"/>
+              <circle cx="12.5" cy="12.5" r="8" fill="red" />
             </pattern>
           </defs>
             <!-- <rect class="MovingBGDivs" x="0" y="0" fill="url('#myGradient')" /> -->      
-            <rect id="rect" fill="url(#Pattern)" width="100%"
-            height="100%" />
-                     
-        </svg>
-        
-        
+            <rect id="rect" fill="url(#Pattern)" width="100" height="100" />                     
+        </svg>        
       </div>
-      <span id="l-u-text">Last Updated - 21.12.2021</span>      
+      <span id="l-u-text">Last Updated - 22.12.2021</span>      
     </div>
-    <!-- Ok brain just isn't doing it today - this article certainly has the answer but still need to wrap my head around it -->
-    <!-- maybe I should start with a fixed div size then make it responsive -->
-    <!-- finished 3:59pm -->
+    <!-- this is become a maths nightmare - i feel like there's probably an easy answer i just can't articulate the question correctly -->
+    <!-- really hard for me to hold this in my head though, maybe just hard to concentrate in general but i guess i'm getting stuck into specifics -->
+    <!-- i'm just going to create something tomorrow for fun, this maths is doing my head in -->
+    <!-- finished 5:04pm -->
   </body>
 
 </html>

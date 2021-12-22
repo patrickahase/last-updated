@@ -103,6 +103,17 @@ function generateSteppedTextGradients(){
 
 function updateSVGBOX() {
   let parentSVG = document.getElementById('svg-init');
+  let width = window.innerWidth;
+  let height = window.innerHeight/10;
+  let lcd = width/height;
+  parentSVG.setAttribute("width", `${width}`);
+  parentSVG.setAttribute("height", `${height}`);
+  let patternSVG = document.getElementById('Pattern');
+  patternSVG.setAttribute("width", `${(1/width)*10}`);
+  patternSVG.setAttribute("height", `${(1/height)*10}`);  
+}
+/* function updateSVGBOX() {
+  let parentSVG = document.getElementById('svg-init');
   let rectSVG = document.getElementById('rect');
   let width = window.innerWidth;
   let height = window.innerHeight/10;
@@ -116,7 +127,7 @@ function updateSVGBOX() {
     viewY = 100;
   }
   parentSVG.setAttribute("viewBox", `0 0 ${viewY} ${viewX}`);
-}
+} */
 
 function cloneSVGs(){
   updateSVGBOX();
