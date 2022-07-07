@@ -53,7 +53,14 @@ code {
   justify-content: center;
   align-items: center;  
   font-size: 3vw;
-  
+  background: linear-gradient(90deg, rgba(34,193,195,1) 0% 50%, rgba(253,187,45,1) 50% 100%);
+  border-image: url(customBorder.svg) 30 / 12px;
+  border-image-repeat: repeat;
+  /* background-image: url(customBorder.svg), url(customBorder.svg), url(customBorder.svg), url(customBorder.svg);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 50px 50px; 
+  background-position: top, bottom, left, right;
+   */
   /* background: linear-gradient(to left top, rgba(34,193,195,1), rgba(253,187,45,1), rgba(34,193,195,1)); */
 /*   background: linear-gradient(.25turn, red, 10%, blue); */
 }
